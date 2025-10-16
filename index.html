@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Robotics SKNCOE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dynamic-bg.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/team-logo.png" type="image/png">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <canvas id="mouse-trail-canvas"></canvas>
+    <!-- User particle-circle background container -->
+    <div id="particle-circle-bg" aria-hidden="true">
+        <canvas id="particle-circle-canvas"></canvas>
+    </div>
+    <div id="dynamic-background"></div>
+    <!-- Dynamic Animated Background -->
+    <div class="dynamic-bg-container">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo-container">
+                <img src="images/team-logo.png" alt="Team Robotics SKNCOE Logo" class="loading-logo-img">
+                <div class="loading-logo-text">TRSKNCOE</div>
+            </div>
+            <div class="loading-text">Loading Future...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/team-logo.png" alt="Team Robotics SKNCOE Logo" class="team-logo">
+                <span class="logo-text">TRSKNCOE</span>
+                <div class="logo-glow"></div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#teams" class="nav-link">Teams</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">TEAM ROBOTICS</span>
+                        <span class="title-line">SKNCOE</span>
+                    </h1>
+                    <p class="hero-subtitle">Building the Future, One Robot at a Time</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Active Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Domains</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hologram-container">
+                    <div class="holographic-display" id="holographic-display">
+                        <!-- Hologram Frame -->
+                        <div class="hologram-frame">
+                            <div class="frame-corner top-left"></div>
+                            <div class="frame-corner top-right"></div>
+                            <div class="frame-corner bottom-left"></div>
+                            <div class="frame-corner bottom-right"></div>
+                            <div class="frame-line horizontal top"></div>
+                            <div class="frame-line horizontal bottom"></div>
+                            <div class="frame-line vertical left"></div>
+                            <div class="frame-line vertical right"></div>
+                        </div>
+                        
+                        <!-- Holographic Content -->
+                        <div class="hologram-content">
+                            <!-- Header -->
+                            <div class="hologram-header">
+                                <div class="scan-line"></div>
+                                <h3>TEAM ROBOTICS SKNCOE</h3>
+                                <div class="status-indicator">
+                                    <div class="status-dot active"></div>
+                                    <span>ONLINE</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Data Grid -->
+                            <div class="data-grid">
+                                <div class="data-item" data-value="13">
+                                    <div class="data-label">YEARS ACTIVE</div>
+                                    <div class="data-value">13</div>
+                                    <div class="data-bar">
+                                        <div class="data-fill"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="data-item" data-value="100">
+                                    <div class="data-label">TOTAL AWARDS</div>
+                                    <div class="data-value">100+</div>
+                                    <div class="data-bar">
+                                        <div class="data-fill"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="data-item" data-value="50">
+                                    <div class="data-label">1ST PLACE WINS</div>
+                                    <div class="data-value">50+</div>
+                                    <div class="data-bar">
+                                        <div class="data-fill"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="data-item" data-value="5">
+                                    <div class="data-label">DOMAINS</div>
+                                    <div class="data-value">5</div>
+                                    <div class="data-bar">
+                                        <div class="data-fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Achievement Stream -->
+                            <div class="achievement-stream">
+                                <div class="stream-header">RECENT ACHIEVEMENTS</div>
+                                <div class="stream-items">
+                                    <div class="stream-item">🏆 Robotex India 2025 - Overall Championship</div>
+                                    <div class="stream-item">🥇 IIT Kharagpur Kshitij - 1st Runner-up</div>
+                                    <div class="stream-item">🥈 IIT Roorkee Cognizance - 2nd Prize</div>
+                                    <div class="stream-item">🏆 Sinhgad Techtonic - 9 Prizes</div>
+                                    <div class="stream-item">🏆 Robotex India 2025 - Overall Championship</div>
+                                    <div class="stream-item">🥇 IIT Kharagpur Kshitij - 1st Runner-up</div>
+                                    <div class="stream-item">🥈 IIT Roorkee Cognizance - 2nd Prize</div>
+                                    <div class="stream-item">🏆 Sinhgad Techtonic - 9 Prizes</div>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                        
+                        <!-- Holographic Effects -->
+                        <div class="hologram-effects">
+                            <div class="scan-line-animated"></div>
+                            <div class="glitch-overlay"></div>
+                            <div class="particle-field">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About The Team</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Our Mission</h3>
+                    <p>To innovate and push the boundaries of robotics through collaboration, learning, and competition.</p>
+                </div>
+                <div class="card">
+                    <h3>Our Vision</h3>
+                    <p>To be a leading collegiate robotics team, recognized for our technical excellence and creative solutions.</p>
+                </div>
+                <div class="card">
+                    <h3>Our Team</h3>
+                    <p>A passionate group of students from various engineering disciplines dedicated to robotics.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teams Section -->
+        <section id="teams" class="teams-section">
+            <div class="section-header">
+                <h2>Our Teams</h2>
+                <p>Specialized domains working together to build the future</p>
+            </div>
+            
+            <div class="teams-container">
+                <!-- Technical Teams -->
+                <div class="team-category">
+                    <h3 class="category-title">Technical Teams</h3>
+                    <div class="teams-grid">
+                        <div class="team-card automation">
+                            <div class="team-icon">
+                                <div class="gear-icon"></div>
+                            </div>
+                            <h4>Automation Team</h4>
+                            <p>Developing intelligent control systems and autonomous behaviors for our robots.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">AI/ML</span>
+                                <span class="skill-tag">Computer Vision</span>
+                                <span class="skill-tag">Control Systems</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-card electronics">
+                            <div class="team-icon">
+                                <div class="circuit-icon"></div>
+                            </div>
+                            <h4>Electronics Team</h4>
+                            <p>Designing and implementing the electronic backbone of our robotic systems.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">PCB Design</span>
+                                <span class="skill-tag">Embedded Systems</span>
+                                <span class="skill-tag">Sensor Integration</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-card mechanical">
+                            <div class="team-icon">
+                                <div class="wrench-icon"></div>
+                            </div>
+                            <h4>Mechanical Team</h4>
+                            <p>Creating robust and efficient mechanical designs for optimal robot performance.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">CAD Design</span>
+                                <span class="skill-tag">3D Printing</span>
+                                <span class="skill-tag">Manufacturing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Non-Technical Teams -->
+                <div class="team-category">
+                    <h3 class="category-title">Support Teams</h3>
+                    <div class="teams-grid">
+                        <div class="team-card social">
+                            <div class="team-icon">
+                                <div class="social-icon"></div>
+                            </div>
+                            <h4>Social Media</h4>
+                            <p>Managing our online presence and connecting with the robotics community.</p>
+                        </div>
+                        
+                        <div class="team-card documentation">
+                            <div class="team-icon">
+                                <div class="doc-icon"></div>
+                            </div>
+                            <h4>Documentation</h4>
+                            <p>Creating comprehensive guides and maintaining project documentation.</p>
+                        </div>
+                        
+                        <div class="team-card outreach">
+                            <div class="team-icon">
+                                <div class="outreach-icon"></div>
+                            </div>
+                            <h4>Outreach</h4>
+                            <p>Organizing workshops and spreading robotics awareness in the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="achievements-section">
+            <div class="section-header">
+                <h2>Our Legacy of Excellence</h2>
+                <p>Over a decade of championship victories and innovation leadership</p>
+                <div class="achievement-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Total Awards</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">13</span>
+                        <span class="stat-label">Years Dominating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">1st Place Wins</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Categories -->
+            <div class="achievement-categories">
+                <!-- Recent Dominance (2024-2025) -->
+                <div class="achievement-category">
+                    <div class="category-header">
+                        <h3>🏆 Recent Dominance (2024-2025)</h3>
+                        <span class="category-subtitle">Championship Season</span>
+                    </div>
+                    <div class="achievement-grid">
+                        <div class="achievement-card major">
+                            <div class="achievement-icon trophy"></div>
+                            <h4>Robotex India 2024 & 2025</h4>
+                            <p class="achievement-date">Aug 2024 & May 2025</p>
+                            <p class="achievement-desc">🏆 Overall Championship (Both Years)<br>🥇 1st Place: Robo Sumo, Maze Runner, Line Follower<br>🥈 2nd Place: Maze Runner</p>
+                        </div>
+                        
+                        <div class="achievement-card major">
+                            <div class="achievement-icon medal"></div>
+                            <h4>IIT Kharagpur Kshitij</h4>
+                            <p class="achievement-date">January 2025</p>
+                            <p class="achievement-desc">🥈 1st Runner-up in Line Follower<br>Competing against India's top engineering institutions</p>
+                        </div>
+                        
+                        <div class="achievement-card major">
+                            <div class="achievement-icon star"></div>
+                            <h4>IIT Roorkee Cognizance</h4>
+                            <p class="achievement-date">March 2025</p>
+                            <p class="achievement-desc">🥈 2nd Prize in Pick & Place (Zengrip)<br>Advanced manipulation robotics</p>
+                        </div>
+                        
+                        <div class="achievement-card major">
+                            <div class="achievement-icon rocket"></div>
+                            <h4>Sinhgad Techtonic 2025</h4>
+                            <p class="achievement-date">April 2025</p>
+                            <p class="achievement-desc">🏆 Total 9 Prizes<br>🥇 ATV Bots, Robocarrom, Maze Solver, Robo Soccer<br>🥈 ATV Bots, Robocarrom, Maze Solver, Trailblaze, Water Rocket</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Golden Era (2023-2024) -->
+                <div class="achievement-category">
+                    <div class="category-header">
+                        <h3>⭐ Golden Era (2023-2024)</h3>
+                        <span class="category-subtitle">Consistent Excellence</span>
+                    </div>
+                    <div class="achievement-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-icon trophy"></div>
+                            <h4>ROBOTEX India 2023</h4>
+                            <p class="achievement-date">2023</p>
+                            <p class="achievement-desc">🥈 1st Runner-Up (Maze Solver)</p>
+                        </div>
+                        
+                        <div class="achievement-card">
+                            <div class="achievement-icon medal"></div>
+                            <h4>Multiple College Championships</h4>
+                            <p class="achievement-date">2023-2024</p>
+                            <p class="achievement-desc">🏆 Overall Champions at CDGI Indore<br>🥇 Multiple 1st prizes across Pune colleges</p>
+                        </div>
+                        
+                        <div class="achievement-card">
+                            <div class="achievement-icon star"></div>
+                            <h4>Search & Destroy Dominance</h4>
+                            <p class="achievement-date">2024</p>
+                            <p class="achievement-desc">🥇 AISSMS IOIT, COEP Pune<br>🥇 Multiple victories in tactical robotics</p>
+                        </div>
+                        
+                        <div class="achievement-card">
+                            <div class="achievement-icon rocket"></div>
+                            <h4>Robo Soccer Excellence</h4>
+                            <p class="achievement-date">2023-2025</p>
+                            <p class="achievement-desc">🥇 PCCOE, ADYPU, AISSMS<br>🥇 Consistent victories in autonomous soccer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Early National Success (2012-2018) -->
+                <div class="achievement-category">
+                    <div class="category-header">
+                        <h3>🚀 Early National Success (2012-2018)</h3>
+                        <span class="category-subtitle">Foundation of Excellence</span>
+                    </div>
+                    <div class="achievement-grid">
+                        <div class="achievement-card legendary">
+                            <div class="achievement-icon trophy"></div>
+                            <h4>Shaastra IIT Madras</h4>
+                            <p class="achievement-date">2012-2014</p>
+                            <p class="achievement-desc">🏆 Winner for 3 Consecutive Years<br>Established dominance at India's premier tech fest</p>
+                        </div>
+                        
+                        <div class="achievement-card legendary">
+                            <div class="achievement-icon medal"></div>
+                            <h4>ABU Robocon</h4>
+                            <p class="achievement-date">2013</p>
+                            <p class="achievement-desc">🥈 All India 2nd Rank<br>International robotics competition qualification</p>
+                        </div>
+                        
+                        <div class="achievement-card legendary">
+                            <div class="achievement-icon star"></div>
+                            <h4>VISION WCE Sangli</h4>
+                            <p class="achievement-date">2013-2018</p>
+                            <p class="achievement-desc">🏆 Overall Champions 6 Years Consecutively<br>Unprecedented winning streak</p>
+                        </div>
+                        
+                        <div class="achievement-card legendary">
+                            <div class="achievement-icon rocket"></div>
+                            <h4>International Robotics Challenge</h4>
+                            <p class="achievement-date">2015</p>
+                            <p class="achievement-desc">🥇 IIT Bombay - All India Rank 1<br>🥇 ISRO Space Challenge - 1st & 2nd Rank</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Recognition -->
+                <div class="achievement-category">
+                    <div class="category-header">
+                        <h3>🌟 Special Recognition</h3>
+                        <span class="category-subtitle">Beyond Competition</span>
+                    </div>
+                    <div class="achievement-grid">
+                        <div class="achievement-card special">
+                            <div class="achievement-icon star"></div>
+                            <h4>ISRO Partnership</h4>
+                            <p class="achievement-date">2015</p>
+                            <p class="achievement-desc">🏆 1st & 2nd Rank in National Students' Space Challenge<br>Collaboration with India's space agency</p>
+                        </div>
+                        
+                        <div class="achievement-card special">
+                            <div class="achievement-icon rocket"></div>
+                            <h4>Techkriti IIT Kanpur</h4>
+                            <p class="achievement-date">2018</p>
+                            <p class="achievement-desc">🥉 4th Rank at one of India's largest tech festivals</p>
+                        </div>
+                        
+                        <div class="achievement-card special">
+                            <div class="achievement-icon trophy"></div>
+                            <h4>Citronics Championship</h4>
+                            <p class="achievement-date">2017</p>
+                            <p class="achievement-desc">🏆 Overall Championship title</p>
+                        </div>
+                        
+                        <div class="achievement-card special">
+                            <div class="achievement-icon medal"></div>
+                            <h4>Milbotics MCE</h4>
+                            <p class="achievement-date">2020</p>
+                            <p class="achievement-desc">🥉 4th Rank in Military College of Engineering competition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Timeline -->
+            <div class="achievement-timeline-container">
+                <h3>📈 Our Journey Through Time</h3>
+                <div class="achievement-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker legendary"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h4>2012-2014: Foundation</h4>
+                                <p>3 consecutive wins at IIT Madras Shaastra</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker legendary"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h4>2013-2018: Golden Era</h4>
+                                <p>6 consecutive championships at VISION WCE</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker major"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h4>2015: International Success</h4>
+                                <p>All India Rank 1 at IIT Bombay & ISRO partnership</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker major"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h4>2023-2025: Modern Dominance</h4>
+                                <p>Back-to-back Robotex championships & IIT victories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <p>Moments from our robotics journey</p>
+            </div>
+        <!-- workshops, team, projects, competitions -->        
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="workshops">
+                        <img src="images/gallery-1.jpg" alt="Robotics Seminar">
+                        <div class="gallery-overlay">
+                            <h4>Robotics Seminar</h4>
+                            <p>Hosting a seminar on robotics as a career choice for 1st Year students.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="team">
+                        <img src="images/gallery-2.jpg" alt="Team Photograph">
+                        <div class="gallery-overlay">
+                            <h4>Team Photograph</h4>
+                            <p>Team Picture for A.Y 2025-2026</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="competitions">
+                        <img src="images/gallery-3.jpg" alt="Robotex 2024">
+                        <div class="gallery-overlay">
+                            <h4>Robotex 2024</h4>
+                            <p>Our team at the Robotex 2024 competition winning the overall championship.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="projects">
+                        <img src="images/gallery-4.jpg" alt="Robocon 2018">
+                        <div class="gallery-overlay">
+                            <h4>Robocon 2018</h4>
+                            <p>Our bot for the Robocon 2018 competition</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="competitions">
+                        <img src="images/gallery-5.jpg" alt="Team Photograph at IIT Roorkee">
+                        <div class="gallery-overlay">
+                            <h4>Team Photograph at IIT Roorkee</h4>
+                            <p>Celebrating our achievement at IIT Roorkee</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="competitions">
+                        <img src="images/gallery-6.jpg" alt="Robotex 2025">
+                        <div class="gallery-overlay">
+                            <h4>Robotex 2025</h4>
+                            <p>Our team at the Robotex 2025 competition after winning the championship.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="competitions">Competitions</button>
+                    <button class="filter-btn" data-filter="projects">Projects</button>
+                    <button class="filter-btn" data-filter="workshops">Workshops</button>
+                    <button class="filter-btn" data-filter="team">Team</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox for Gallery -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <span class="lightbox-close">&times;</span>
+                <img id="lightbox-img" src="" alt="">
+                <div class="lightbox-caption">
+                    <h4 id="lightbox-title"></h4>
+                    <p id="lightbox-desc"></p>
+                </div>
+            </div>
+        </div>
+
+        <section id="projects" class="projects-section">
+            <h2>Our Projects</h2>
+            <div class="projects-grid">
+                <div class="project-tile">
+                    <img src="images/project-alpha.jpg" alt="Robocon 2018">
+                    <div class="project-info">
+                        <h3>Robocon 2018</h3>
+                        <p>An autonomous exploration robot with advanced sensor fusion for Robocon 2018.</p>
+                    </div>
+                </div>
+                <div class="project-tile">
+                    <img src="images/project-beta.jpg" alt="Robocon 2025">
+                    <div class="project-info">
+                        <h3>Robocon 2025</h3>
+                        <p>A glimpse of the base chassis for our Robocon 2025 robot.</p>
+                    </div>
+                </div>
+                <div class="project-tile">
+                    <img src="images/project-gamma.jpg" alt="Project Matin">
+                    <div class="project-info">
+                        <h3>Project Matin</h3>
+                        <p>A classified project under development.</p>
+                    </div>
+                </div>
+            </div>
+                </section>
+        
+                <!-- Tech Stack Section -->
+                <section id="tech-stack" class="tech-stack-section">
+                    <div class="section-header">
+                        <h2>Our Tech Stack</h2>
+                        <p>The tools and technologies that power our robots</p>
+                    </div>
+                    <div class="tech-stack-main-interactive">
+                <p class="tech-stack-hover-text">HOVER TO REVEAL TECH STACK</p>
+                <div class="tech-stack-grid">
+                    <div class="tech-item">
+                        <img src="images/raspberry-pi-svgrepo-com.svg" alt="Raspberry Pi">
+                        <span>Raspberry Pi</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/arduino-svgrepo-com.svg" alt="Arduino">
+                        <span>Arduino</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/python-svgrepo-com.svg" alt="Python">
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/cpp-svgrepo-com.svg" alt="C++">
+                        <span>C++</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/Robot Operating System (ROS).svg" alt="ROS">
+                        <span>ROS</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/opencv-svgrepo-com.svg" alt="OpenCV">
+                        <span>OpenCV</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/blender-svgrepo-com.svg" alt="Blender">
+                        <span>Blender</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/espressif-svgrepo-com.svg" alt="Espressif">
+                        <span>Espressif</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/Gazebo.svg" alt="Gazebo">
+                        <span>Gazebo</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/KiCad_icon.svg" alt="KiCad">
+                        <span>KiCad</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/linux-svgrepo-com.svg" alt="Linux">
+                        <span>Linux</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/MATLAB.svg" alt="MATLAB">
+                        <span>MATLAB</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/solidworks-svgrepo-com.svg" alt="SolidWorks">
+                        <span>SolidWorks</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="images/github-142-svgrepo-com.svg" alt="GitHub">
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </div>                </section>
+        
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <div class="section-header">
+                        <h2>Frequently Asked Questions</h2>
+                        <p>Everything you need to know about our team</p>
+                    </div>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How can I join the team?</h3>
+                                <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We typically hold recruitment drives at the beginning of each academic year. Keep an eye on our social media channels for announcements. We look for passionate students from all engineering disciplines.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What skills do I need to join?</h3>
+                                <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>While experience in programming (Python, C++), CAD software, or electronics is a plus, the most important thing is a willingness to learn and a passion for robotics. We provide training and mentorship to all new members.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What kind of projects do you work on?</h3>
+                                <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We work on a wide range of projects, from autonomous robots for competitions to research-oriented projects in areas like computer vision and AI. You can see some of our past projects in the "Projects" section of our website.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+            </main>
+
+    <footer>
+        <div class="main__socials">
+          <a href="https://www.instagram.com/skncoerobotics?igsh=amhuZ3piN3dzeXRj" target="_blank" class="Link__instagram">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0,0,256,256"
+              width="30px"
+              height="30px"
+              fill-rule="nonzero"
+              class="instagram"
+            >
+              <g
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <g transform="scale(8,8)">
+                  <path
+                    d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <a href="https://github.com/TRSKNCOE-Coding-Crew" target="_blank" class="Link__github">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 30 30"
+              width="30px"
+              height="30px"
+              class="github"
+            >
+              <path
+                d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"
+              ></path>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/school/trskncoe/?originalSubdomain=in" target="_blank" class="Link__linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="linkedin" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+            </svg>
+          </a>
+          <a href="https://discord.gg/xMA5jMyU" target="_blank" class="Link__discord">
+            <svg
+              height="30px"
+              width="30px"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+              class="discord"
+            >
+              <path
+                d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"
+              ></path>
+            </svg>
+          </a>
+          <a href="https://chat.whatsapp.com/J4S1PdRHTIiCRR0NkKkCVT" target="_blank" class="Link__whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.1-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232"/>
+            </svg>
+          </a>
+        </div>
+        <p>&copy; 2025 Team Robotics SKNCOE. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
