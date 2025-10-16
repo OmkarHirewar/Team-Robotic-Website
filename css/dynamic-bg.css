@@ -1,0 +1,62 @@
+/* Dynamic Animated Background */
+.dynamic-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(255, 102, 0, 0.1), rgba(255, 140, 0, 0.1));
+    animation: circleFloat 20s infinite;
+    opacity: 0.3;
+    filter: blur(50px);
+}
+
+.bg-circle:nth-child(1) {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -100px;
+    animation-delay: 0s;
+    background: linear-gradient(45deg, rgba(255, 102, 0, 0.1), rgba(255, 0, 0, 0.1));
+}
+
+.bg-circle:nth-child(2) {
+    width: 500px;
+    height: 500px;
+    top: 40%;
+    right: -100px;
+    animation-delay: -5s;
+    background: linear-gradient(45deg, rgba(255, 140, 0, 0.1), rgba(255, 102, 0, 0.1));
+}
+
+.bg-circle:nth-child(3) {
+    width: 400px;
+    height: 400px;
+    bottom: -100px;
+    left: 30%;
+    animation-delay: -10s;
+    background: linear-gradient(45deg, rgba(255, 170, 0, 0.1), rgba(255, 140, 0, 0.1));
+}
+
+@keyframes circleFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(50px, 50px) scale(1.1);
+    }
+    50% {
+        transform: translate(0, 100px) scale(1);
+    }
+    75% {
+        transform: translate(-50px, 50px) scale(0.9);
+    }
+}
