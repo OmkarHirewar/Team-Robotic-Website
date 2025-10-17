@@ -39,7 +39,7 @@
             constructor(x, y) {
                 this.x = x;
                 this.y = y;
-                this.radius = 2;
+                this.radius = 1;
                 this.baseX = this.x;
                 this.baseY = this.y;
                 this.density = (Math.random() * 30) + 1;
