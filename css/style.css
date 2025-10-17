@@ -2417,7 +2417,7 @@ spline-viewer .credit {
     background: linear-gradient(180deg, rgba(10,10,10,0.7), rgba(10,10,10,0.45));
     border-radius: 6px;
     pointer-events: none;
-    z-index: 20;
+    z-index: -20;
     mix-blend-mode: normal;
 }
 

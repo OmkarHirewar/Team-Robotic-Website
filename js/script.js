@@ -27,7 +27,7 @@
         let mouse = {
             x: null,
             y: null,
-            radius: 200
+            radius:50
         };
         
         function handleMouseMove(event) {
