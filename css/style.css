@@ -2300,7 +2300,7 @@ body.disable-bg-animations .particle-field { display: none !important; }
 
 /* Mask / hide Spline viewer watermark */
 .robot-3d {
-    overflow: visible;
+    overflow: hidden;
 }
 
 /* Defensive: try to hide common watermark/credit elements injected by Spline */
