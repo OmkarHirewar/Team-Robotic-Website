@@ -637,16 +637,51 @@ const loadingScreen = document.getElementById('loading-screen');
 // Show loading screen initially
 document.body.style.opacity = '0';
 
-// Hide loading screen after everything loads
-document.addEventListener('DOMContentLoaded', () => {
-    loadingScreen.style.opacity = '0';
-    setTimeout(() => {
-        loadingScreen.style.display = 'none';
-        document.body.style.opacity = '1';
-        document.body.style.transition = 'opacity 0.5s ease';
-    }, 500);
-});
+// Hide loading screen, initialize particles, and setup modal popup in a single DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function() {
+        // Hide loading screen
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.5s ease';
+        }, 500);
 
-/* Initialize particle circle */
-init();
-animate();
+        // Initialize particle circle
+        init();
+        animate();
+
+
+
+        // Animate team cards on hover
+        document.querySelectorAll('.team-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                        card.style.transform = 'translateY(-15px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'translateY(0) scale(1)';
+                });
+        });
+
+        // Achievement timeline animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                                setTimeout(() => {
+                                        entry.target.style.opacity = '1';
+                                        entry.target.style.transform = 'translateX(0)';
+                                }, index * 200);
+                        }
+                });
+        }, { threshold: 0.3 });
+        timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-50px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                timelineObserver.observe(item);
+        });
+
+        // Stats counter animation
+        animateCounters();
+});
