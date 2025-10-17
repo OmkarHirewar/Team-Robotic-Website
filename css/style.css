@@ -781,8 +781,9 @@ nav {
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-    animation: scanLine 4s linear infinite;
-    opacity: 0.6;
+    /* Hide the moving scan line to remove the top-to-bottom animation */
+    display: none !important;
+    opacity: 0;
 }
 
 @keyframes scanLine {
@@ -2284,5 +2285,57 @@ body.disable-bg-animations .particle-field { display: none !important; }
     body, body * {
         animation: none !important;
         transition: none !important;
+    }
+}
+
+
+
+.robot-3d{
+    position :relative;
+    top:0;
+    right:-10%;
+    height:750px;
+    width:750px;
+}
+
+/* Mask / hide Spline viewer watermark */
+.robot-3d {
+    overflow: visible;
+}
+
+/* Defensive: try to hide common watermark/credit elements injected by Spline */
+.robot-3d spline-viewer .spline-credit,
+.robot-3d spline-viewer .credit,
+.robot-3d .spline-credit,
+.robot-3d .spline-watermark,
+spline-viewer .spline-credit,
+spline-viewer .credit {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* If watermark is inside the viewer's shadow DOM (cannot be directly targeted),
+   overlay a small mask in the bottom-right of the viewer to cover it. */
+.robot-3d::after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 96px;
+    height: 34px;
+    background: linear-gradient(180deg, rgba(10,10,10,0.7), rgba(10,10,10,0.45));
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 20;
+    mix-blend-mode: normal;
+}
+
+/* Make overlay subtler on small screens */
+@media (max-width: 768px) {
+    .robot-3d::after {
+        width: 72px;
+        height: 28px;
+        bottom: 8px;
+        right: 8px;
     }
 }

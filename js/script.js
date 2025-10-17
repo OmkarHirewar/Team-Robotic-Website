@@ -408,12 +408,9 @@ document.addEventListener('mousemove', (e) => {
             particle.style.transform = `scale(${1 + (1 - particleIntensity) * 0.5})`;
         });
         
-        // Scan line speed based on mouse movement
-        const scanLine = document.querySelector('.scan-line-animated');
-        if (scanLine) {
-            const speed = Math.max(4, 8 - (distance / maxDistance) * 4);
-            scanLine.style.animationDuration = `${speed}s`;
-        }
+        // Scan line speed adjustment removed (scan-line hidden via CSS)
+        // noop placeholder kept intentionally
+        void 0;
     }
 });
 
