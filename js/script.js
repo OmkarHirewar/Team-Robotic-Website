@@ -39,7 +39,7 @@
             constructor(x, y) {
                 this.x = x;
                 this.y = y;
-                this.radius = 1;
+                this.radius = 2;
                 this.baseX = this.x;
                 this.baseY = this.y;
                 this.density = (Math.random() * 30) + 1;
@@ -80,7 +80,7 @@
             }
         }
         
-        const FORCE_MULTIPLIER = 5.0; // Force multiplier for stronger attraction
+        const FORCE_MULTIPLIER = 3.0; // Force multiplier for stronger attraction
         const FRICTION = 0.99; // Friction coefficient for smoother return
 
         function init() {
